@@ -37,17 +37,17 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     @Override
     public V getValue(K key) {
-        int bucketIndex = getIndex(key);
+        int EntryIndex = getIndex(key);
         Node<K,V> newNode;
-        if (table[bucketIndex] == null) {
+        if (table[EntryIndex] == null) {
             return null;
         } else {
-            newNode = table[bucketIndex];
-            while (newNode != null) {
+            newNode = table[EntryIndex];
+             while (newNode != null) {
                 if (key == newNode.key || key != null && key.equals(newNode.key)) {
                     return newNode.value;
                 }
-                newNode = newNode.next;
+                 newNode = newNode.next;
             }
         }
         return null;
